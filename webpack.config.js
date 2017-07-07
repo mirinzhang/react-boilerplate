@@ -4,6 +4,7 @@ const path = require('path'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
     AutoDllPlugin = require('autodll-webpack-plugin'),
+    WebpackNotifierPlugin = require('webpack-notifier'),
     HOST = '0.0.0.0',
     PORT = 4040,
     cssExtract = process.env.NODE_ENV === 'production' ?
@@ -20,6 +21,9 @@ const path = require('path'),
         'react-router-dom',
         'redux',
         'whatwg-fetch',
+        '@types/react',
+        '@types/react-dom',
+        '@types/react-router',
     ];
 
 let commonPlugins = [];
@@ -32,7 +36,7 @@ module.exports = {
         historyApiFallback: true,
         port: PORT,
         host: HOST,
-        open: true,
+        open: false,
         headers: { 'Access-Control-Allow-Origin': '*' },
     },
     entry: [
@@ -44,7 +48,8 @@ module.exports = {
         chunkFilename: '[name].[chunkhash:6].chunk.js',
     },
     resolve: {
-        extensions: [ '.jsx', '.js', '.sass', '.scss' ],
+        extensions: [ '.tsx', '.ts', '.jsx', '.js', '.sass', '.scss' ],
+        modules: [ 'src', 'node_modules' ],
     },
     resolveLoader: {
         moduleExtensions: [ '-loader' ],
@@ -52,8 +57,9 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx$/,
-                use: [ 'babel', 'eslint' ],
+                test: /\.(ts|tsx)$/,
+                use: [ 'babel', 'ts' ],
+                include: path.resolve('src'),
                 exclude: /node_modules/,
             },
             {
@@ -68,16 +74,16 @@ module.exports = {
         ],
     },
     plugins: [
-        new CleanWebpackPlugin([ 'dist' ]),
-        new AutoDllPlugin({
-            inject: true,
-            context: __dirname,
-            filename: '[name]_[hash].js',
-            path: './dll',
-            entry: {
-                vendor: vendors,
-            },
-        }),
+      new CleanWebpackPlugin([ 'dist' ]),
+      new AutoDllPlugin({
+          inject: true,
+          context: __dirname,
+          filename: '[name]_[hash].js',
+          path: './dll',
+          entry: {
+              vendor: vendors,
+          },
+      }),
     ],
 };
 
@@ -142,6 +148,10 @@ if (process.env.NODE_ENV === 'production') {
     commonPlugins = [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
+        new WebpackNotifierPlugin({
+          title: '构建提醒',
+          message: '哇啦啦啦，构建成功啦🤓🤓🤓'
+        }),
         new HtmlWebpackPlugin({
             title: 'Development',
             filename: 'index.html',
@@ -152,9 +162,6 @@ if (process.env.NODE_ENV === 'production') {
         new webpack.LoaderOptionsPlugin({
             debug: true,
             options: {
-                eslint: {
-                    configFile: './.eslintrc',
-                },
             },
         }),
     ];
