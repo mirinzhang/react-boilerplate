@@ -1,1 +1,1 @@
-`react-webpack`模板
+> boilerplate (`react` `redux` `antd`)

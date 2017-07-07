@@ -7,7 +7,7 @@
         "dev": "cross-env NODE_ENV=development webpack-dev-server",
         "build": "cross-env NODE_ENV=production webpack"
     },
-    "repository": "git@code.aliyun.com:zybing/react-webpack-template.git",
+    "repository": "git@github.com:MiRinZhang/react-boilerplate.git",
     "author": "MiRinZhang <noodles@yabing.me>",
     "license": "MIT",
     "devDependencies": {
