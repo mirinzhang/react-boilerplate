@@ -32,6 +32,7 @@
         "cross-env": "^5.0.1",
         "css-loader": "^0.28.4",
         "extract-text-webpack-plugin": "^2.1.2",
+        "fork-ts-checker-webpack-plugin": "^0.2.4",
         "html-webpack-plugin": "^2.29.0",
         "node-sass": "^4.5.3",
         "postcss-cssnext": "^2.11.0",
