@@ -3,10 +3,17 @@
     "extends": ["tslint:latest", "tslint-react"],
     "jsRules": {},
     "rules": {
-      "quotemark": [true, "single", "jsx-double"],
-      "semicolon": [true, "always"],
-      "interface-name": [true, "never-prefix"],
-      "object-literal-sort-keys": false
+        "quotemark": [true, "single", "jsx-double"],
+        "semicolon": [true, "always"],
+        "interface-name": [true, "never-prefix"],
+        "object-literal-sort-keys": false,
+        "ordered-imports": [
+            true,
+            {
+                "import-sources-order": "any",
+                "named-imports-order": "any"
+            }
+        ]
     },
     "rulesDirectory": []
 }
