@@ -1,1 +1,1 @@
-`react-webpack`模板
+> use `react` `redux` `typescript`
