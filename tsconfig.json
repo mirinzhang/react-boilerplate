@@ -8,7 +8,8 @@
         "jsx": "react",
         "allowSyntheticDefaultImports": true,
         "baseUrl": "src",
-        "strict": true
+        "strict": true,
+        "moduleResolution": "node"
     },
     "include": [
         "./src/**/*"
