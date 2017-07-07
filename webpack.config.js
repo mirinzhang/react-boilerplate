@@ -5,6 +5,7 @@ const path = require('path'),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
     AutoDllPlugin = require('autodll-webpack-plugin'),
     WebpackNotifierPlugin = require('webpack-notifier'),
+    ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin'),
     HOST = '0.0.0.0',
     PORT = 4040,
     cssExtract = process.env.NODE_ENV === 'production' ?
@@ -148,6 +149,7 @@ if (process.env.NODE_ENV === 'production') {
     commonPlugins = [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
+        new ForkTsCheckerWebpackPlugin(),
         new WebpackNotifierPlugin({
           title: '构建提醒',
           message: '哇啦啦啦，构建成功啦🤓🤓🤓'
