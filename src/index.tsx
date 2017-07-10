@@ -3,17 +3,21 @@
  */
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { enthusiasm } from './reducers/index';
+import { StoreState } from './types/index';
 
-const App = (props: any) => {
-  return (
-    <div>
-      <p>React-TS Project</p>
-      <p>module name: {props.name}</p>
-    </div>
-  );
-};
+import Demo from './containers/Demo';
+
+const store = createStore<StoreState>(enthusiasm, ({
+    enthusiasmLevel: 1,
+    languageName: 'Demo Project',
+}));
 
 render(
-  <App name="app" />,
-  document.getElementById('app'),
+    <Provider store={store}>
+        <Demo />
+    </Provider>,
+    document.getElementById('app'),
 );

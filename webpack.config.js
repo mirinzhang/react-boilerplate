@@ -22,8 +22,10 @@ const path = require('path'),
         'react-router-dom',
         'redux',
         'whatwg-fetch',
+        '@types/node',
         '@types/react',
         '@types/react-dom',
+        '@types/react-redux',
         '@types/react-router',
     ];
 
@@ -38,7 +40,6 @@ module.exports = {
         port: PORT,
         host: HOST,
         open: true,
-        headers: { 'Access-Control-Allow-Origin': '*' },
     },
     entry: [
         './src/index',
@@ -163,8 +164,7 @@ if (process.env.NODE_ENV === 'production') {
         }),
         new webpack.LoaderOptionsPlugin({
             debug: true,
-            options: {
-            },
+            options: {},
         }),
     ];
     module.exports.devtool = 'source-map';
