@@ -33,6 +33,7 @@ module.exports = {
         port: PORT,
         host: HOST,
         open: true,
+        openPage: '',
     },
     entry: [
         './src/index',
