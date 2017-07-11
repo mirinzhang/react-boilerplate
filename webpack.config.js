@@ -32,7 +32,7 @@ module.exports = {
         historyApiFallback: true,
         port: PORT,
         host: HOST,
-        open: true,
+        open: false,
         headers: { 'Access-Control-Allow-Origin': '*' },
     },
     entry: [

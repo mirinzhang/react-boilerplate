@@ -1,17 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-import { DatePicker } from 'antd';
-
-export default class App extends Component {
-    render() {
-        return (
-            <div>
-                <p>user antd design</p>
-                <DatePicker />
-            </div>
-        );
-    }
-}
+import App from './App';
 
 render(
     <App />,

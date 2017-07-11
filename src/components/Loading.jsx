@@ -3,12 +3,10 @@
  */
 import React, { Component } from 'react';
 
-export default class First extends Component {
+export default class Loading extends Component {
     render() {
         return (
-            <div>
-                <p>first page</p>
-            </div>
+            <p>Loading</p>
         );
     }
 }
