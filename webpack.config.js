@@ -52,7 +52,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx$/,
+                test: /\.(js|jsx)$/,
                 use: [ 'babel', 'eslint' ],
                 exclude: /node_modules/,
             },
