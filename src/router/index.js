@@ -6,6 +6,14 @@ import Loading from '../components/Loading';
 
 const routes = [
     {
+        path: '/',
+        component: Loadable({
+            loader: () => import(/* webpackChunkName: "home" */ '../components/Home'),
+            loading: Loading,
+        }),
+        id: 0,
+    },
+    {
         path: '/first',
         component: Loadable({
             loader: () => import(/* webpackChunkName: "first" */ '../components/First'),

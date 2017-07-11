@@ -5,7 +5,6 @@ import React from 'react';
 import {
     BrowserRouter as Router,
     Route,
-    Link,
 } from 'react-router-dom';
 import routes from './router';
 
@@ -13,24 +12,16 @@ export default function () {
     return (
         <Router>
             <div>
-                <ul>
-                    <li><Link to="/first">First</Link></li>
-                    <li><Link to="/second">Second</Link></li>
-                    <li><Link to="/third">Third</Link></li>
-                </ul>
                 {routes.map(route => (
-                    <RouteWithSubRoutes key={route.id} {...route} />
+                    <Route
+                        path={route.path}
+                        key={route.id}
+                        render={props => (
+                            <route.component {...props} routes={route.routes} />
+                        )}
+                    />
                 ))}
             </div>
         </Router>
     );
 }
-
-// helpers
-const RouteWithSubRoutes = route => (
-    <Route
-        path={route.path}
-        render={props => (
-            <route.component {...props} routes={route.routes} />
-        )} />
-);
