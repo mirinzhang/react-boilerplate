@@ -14,7 +14,6 @@ const path = require('path'),
         })
         : [ 'style', 'css', 'postcss', 'sass' ],
     vendors = [
-        'antd',
         'react',
         'react-dom',
         'react-redux',
