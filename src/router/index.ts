@@ -38,7 +38,7 @@ const routes = [
     {
         path: '/demo',
         component: Loadable({
-            loader: () => import(/* webpackChunkName: "demo" */ '../components/Demo'),
+            loader: () => import(/* webpackChunkName: "demo" */ '../containers/Demo'),
             loading: Loading,
         }),
         key: 3,
