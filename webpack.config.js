@@ -22,9 +22,13 @@ const path = require('path'),
         'react-router-dom',
         'redux',
         'whatwg-fetch',
+        'react-loadable',
         '@types/react',
+        '@types/node',
         '@types/react-dom',
         '@types/react-router',
+        '@types/react-redux',
+        '@types/react-loadable',
     ];
 
 let commonPlugins = [];
@@ -38,7 +42,7 @@ module.exports = {
         port: PORT,
         host: HOST,
         open: true,
-        headers: { 'Access-Control-Allow-Origin': '*' },
+        openPage: '',
     },
     entry: [
         './src/index',

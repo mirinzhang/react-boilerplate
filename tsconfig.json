@@ -3,13 +3,13 @@
         "outDir": "./dist/",
         "sourceMap": true,
         "noImplicitAny": true,
-        "module": "es6",
+        "module": "esnext",
         "target": "es6",
-        "jsx": "react",
+        "jsx": "preserve",
+        "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "baseUrl": "src",
-        "strict": true,
-        "moduleResolution": "node"
+        "strict": true
     },
     "include": [
         "./src/**/*"
