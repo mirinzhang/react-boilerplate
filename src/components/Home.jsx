@@ -9,6 +9,7 @@ export default class Home extends Component {
         return (
             <div>
                 <p>Home page</p>
+                <h4>subRoute</h4>
                 <ul>
                     <li><Link to="/first">First</Link></li>
                     <li><Link to="/second">Second</Link></li>

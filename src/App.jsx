@@ -5,23 +5,16 @@ import React from 'react';
 import {
     BrowserRouter as Router,
     Route,
+    Switch,
 } from 'react-router-dom';
 import routes from './router';
 
 export default function () {
     return (
         <Router>
-            <div>
-                {routes.map(route => (
-                    <Route
-                        path={route.path}
-                        key={route.id}
-                        render={props => (
-                            <route.component {...props} routes={route.routes} />
-                        )}
-                    />
-                ))}
-            </div>
+            <Switch>
+                {routes.map(route => <Route {...route} />)}
+            </Switch>
         </Router>
     );
 }

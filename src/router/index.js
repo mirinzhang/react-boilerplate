@@ -11,7 +11,9 @@ const routes = [
             loader: () => import(/* webpackChunkName: "home" */ '../components/Home'),
             loading: Loading,
         }),
-        id: 0,
+        exact: true,
+        strict: true,
+        key: 0,
     },
     {
         path: '/first',
@@ -19,7 +21,9 @@ const routes = [
             loader: () => import(/* webpackChunkName: "first" */ '../components/First'),
             loading: Loading,
         }),
-        id: 1,
+        exact: true,
+        strict: true,
+        key: 1,
     },
     {
         path: '/second',
@@ -27,7 +31,9 @@ const routes = [
             loader: () => import(/* webpackChunkName: "second" */ '../components/Second'),
             loading: Loading,
         }),
-        id: 2,
+        exact: true,
+        strict: true,
+        key: 2,
     },
     {
         path: '/third',
@@ -35,7 +41,9 @@ const routes = [
             loader: () => import(/* webpackChunkName: "third" */ '../components/Third'),
             loading: Loading,
         }),
-        id: 3,
+        exact: true,
+        strict: true,
+        key: 3,
     },
 ];
 
