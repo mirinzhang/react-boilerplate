@@ -33,7 +33,7 @@ module.exports = {
         port: PORT,
         host: HOST,
         open: true,
-        headers: { 'Access-Control-Allow-Origin': '*' },
+        openPage: '',
     },
     entry: [
         './src/index',
@@ -52,7 +52,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx$/,
+                test: /\.(js|jsx)$/,
                 use: [ 'babel', 'eslint' ],
                 exclude: /node_modules/,
             },
