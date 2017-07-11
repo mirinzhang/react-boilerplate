@@ -1,13 +1,16 @@
 .container {
     text-align: center;
     margin: 20px;
-    font-size: 48px;
+    font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-    button {
-        margin-left: 25px;
-        margin-right: 25px;
-        font-size: 40px;
-        min-width: 50px;
+    .content {
+        margin-bottom: 1rem;
+    }
+
+    .opr {
+        .decrement {
+            margin-right: 1rem;
+        }
     }
 }

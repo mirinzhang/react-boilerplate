@@ -2,6 +2,9 @@
  * Created by Min on 2017/7/11.
  */
 import React from 'react';
+import { Button } from 'antd';
+
+import './style';
 
 export interface Props {
     name: string;
@@ -21,8 +24,8 @@ export default function({ name, enthusiasmLevel = 1, onDecrement, onIncrement }:
                 {name + getExclamationMarks(enthusiasmLevel)}
             </div>
             <div className="opr">
-                <button onClick={onDecrement}>-</button>
-                <button onClick={onIncrement}>+</button>
+                <Button className="decrement" onClick={onDecrement} type="danger">-</Button>
+                <Button onClick={onIncrement} type="primary">+</Button>
             </div>
         </div>
     );
