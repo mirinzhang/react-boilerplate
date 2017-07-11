@@ -2,7 +2,7 @@
  * Created by Min on 2017/7/10.
  */
 import React from 'react';
-import './Demo';
+import './style';
 
 export interface Props {
     name: string;
@@ -11,7 +11,7 @@ export interface Props {
     onDecrement?: () => void;
 }
 
-export default function Demo({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
+export default function({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
     if (enthusiasmLevel <= 0) {
         throw new Error('You could be a little more enthusiastic.🤣');
     }

@@ -5,19 +5,19 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { enthusiasm } from './reducers/index';
-import { StoreState } from './types/index';
+import { enthusiasm } from './reducers';
+import { StoreState } from './types';
 
-import Demo from './containers/Demo';
+import App from './App';
 
 const store = createStore<StoreState>(enthusiasm, ({
     enthusiasmLevel: 1,
-    languageName: 'Demo Project',
+    languageName: 'typescript',
 }));
 
 render(
     <Provider store={store}>
-        <Demo />
+        <App />
     </Provider>,
     document.getElementById('app'),
 );

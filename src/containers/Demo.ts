@@ -2,7 +2,7 @@
  * Created by Min on 2017/7/10.
  */
 import { connect, Dispatch } from 'react-redux';
-import * as actions from '../actions';
+import { EnthusiasmAction, incrementEnthusiasm, decrementEnthusiasm } from '../actions';
 import { StoreState } from '../types';
 import Demo from '../components/Demo';
 
@@ -13,10 +13,10 @@ export function mapStateToProps({ enthusiasmLevel, languageName }: StoreState) {
     };
 }
 
-export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>) {
+export function mapDispatchToProps(dispatch: Dispatch<EnthusiasmAction>) {
     return {
-        onIncrement: () => dispatch(actions.incrementEnthusiasm()),
-        onDecrement: () => dispatch(actions.decrementEnthusiasm()),
+        onIncrement: () => dispatch(incrementEnthusiasm()),
+        onDecrement: () => dispatch(decrementEnthusiasm()),
     };
 }
 
