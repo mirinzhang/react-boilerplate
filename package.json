@@ -53,6 +53,7 @@
     },
     "dependencies": {
         "antd": "^2.11.2",
+        "classnames": "^2.2.5",
         "react": "^15.6.1",
         "react-dom": "^15.6.1",
         "react-loadable": "^4.0.3",
