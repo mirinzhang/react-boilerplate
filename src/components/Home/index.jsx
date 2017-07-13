@@ -3,13 +3,12 @@
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
-import './style';
+import styles from './style';
 
 export default class Home extends Component {
     render() {
         return (
-            <div className="container">
+            <div className={styles.container}>
                 <p>Home page</p>
                 <h4>subRoute</h4>
                 <ul>

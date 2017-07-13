@@ -6,11 +6,12 @@ const path = require('path'),
     AutoDllPlugin = require('autodll-webpack-plugin'),
     HOST = '0.0.0.0',
     PORT = 4040,
+    cssModule = 'css?modules&importLoaders=1&localIdentName=[name]__[local]--[hash:base64:5]!postcss!sass',
     cssExtract = process.env.NODE_ENV === 'production' ?
         ExtractTextPlugin.extract({
-            fallback: 'style', use: [ 'css', 'postcss', 'sass' ],
+            fallback: 'style', use: cssModule,
         })
-        : [ 'style', 'css', 'postcss', 'sass' ],
+        : `style!${cssModule}`,
     vendors = [
         'antd',
         'react',
@@ -20,6 +21,7 @@ const path = require('path'),
         'react-router-dom',
         'redux',
         'whatwg-fetch',
+        'classnames',
     ];
 
 let commonPlugins = [];
@@ -58,7 +60,7 @@ module.exports = {
             },
             {
                 test: /\.(scss|sass)$/,
-                use: cssExtract,
+                loader: cssExtract,
                 exclude: /node_modules/,
             },
             {
