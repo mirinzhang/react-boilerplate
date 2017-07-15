@@ -14,6 +14,11 @@
         "transform-decorators-legacy"
     ],
     "env": {
+        "production": {
+            "presets": [
+                "react-optimize"
+            ]
+        },
         "development": {
             "presets": [
                 "react-hmre"
