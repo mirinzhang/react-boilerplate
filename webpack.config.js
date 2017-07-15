@@ -71,6 +71,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin([ 'dist' ]),
+        // new webpack.optimize.ModuleConcatenationPlugin(),
         new AutoDllPlugin({
             inject: true,
             context: __dirname,
