@@ -4,6 +4,8 @@ const path = require('path'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
     AutoDllPlugin = require('autodll-webpack-plugin'),
+    ChunkManifestPlugin = require("chunk-manifest-webpack-plugin"),
+    WebpackChunkHash = require("webpack-chunk-hash"),
     HOST = '0.0.0.0',
     PORT = 4040,
     cssModule = 'css?modules&importLoaders=1&localIdentName=[name]__[local]--[hash:base64:5]!postcss!sass',
@@ -93,6 +95,12 @@ if (process.env.NODE_ENV === 'production') {
                 return module.context && module.context.indexOf('node_modules') !== -1;
             },
         }),
+        new ChunkManifestPlugin({
+          filename: "chunk-manifest.json",
+          manifestVariable: "webpackManifest"
+        }),
+        new webpack.HashedModuleIdsPlugin(),
+        new WebpackChunkHash(),
         new ExtractTextPlugin({
             filename: '[name].style.[contenthash].css',
             disable: false,

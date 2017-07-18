@@ -28,6 +28,7 @@
         "babel-preset-react-optimize": "^1.0.1",
         "babel-preset-stage-3": "^6.24.1",
         "babel-runtime": "^6.23.0",
+        "chunk-manifest-webpack-plugin": "^1.1.0",
         "clean-webpack-plugin": "^0.1.16",
         "cross-env": "^5.0.1",
         "css-loader": "^0.28.4",
@@ -50,6 +51,7 @@
         "source-map-loader": "^0.2.1",
         "style-loader": "^0.18.2",
         "webpack": "^3.0.0",
+        "webpack-chunk-hash": "^0.4.0",
         "webpack-dev-server": "^2.5.0"
     },
     "dependencies": {
