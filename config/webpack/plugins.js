@@ -5,7 +5,6 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");
 const WebpackChunkHash = require("webpack-chunk-hash");
 const DashboardPlugin = require("webpack-dashboard/plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
@@ -92,10 +91,6 @@ exports.prodPlugins = [
         },
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
-    new ChunkManifestPlugin({
-        filename: "chunk-manifest.json",
-        manifestVariable: "webpackManifest"
-    }),
     new webpack.HashedModuleIdsPlugin(),
     new WebpackChunkHash(),
     new HtmlWebpackPlugin({
