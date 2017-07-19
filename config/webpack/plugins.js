@@ -5,19 +5,19 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const WebpackChunkHash = require("webpack-chunk-hash");
-const DashboardPlugin = require("webpack-dashboard/plugin");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+const WebpackChunkHash = require('webpack-chunk-hash');
+const DashboardPlugin = require('webpack-dashboard/plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
     .BundleAnalyzerPlugin;
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const __DEV__ = (process.env.NODE_ENV || "development") === "development";
+const __DEV__ = (process.env.NODE_ENV || 'development') === 'development';
 
 
 exports.commonPlugins = [
     new webpack.DefinePlugin({
         'process.env': {
-            NODE_ENV: JSON.stringify(__DEV__ ? "development" : 'production'),
+            NODE_ENV: JSON.stringify(__DEV__ ? 'development' : 'production'),
         },
     }),
 ];
@@ -40,7 +40,7 @@ exports.devPlugins = [
             eslint: {
                 configFile: path.join(__dirname, '../tools/.eslintrc'),
             },
-            context: "/",
+            context: '/',
         },
     }),
     new webpack.DllReferencePlugin({
@@ -53,10 +53,10 @@ exports.prodPlugins = [
     new CleanWebpackPlugin([ 'dist', 'public' ], { root: path.join(__dirname, '../../') }),
     new webpack.optimize.CommonsChunkPlugin({
         names: [ 'vendor', 'manifest' ],
-        filename: "vendor.bundle.js",
+        filename: 'vendor.bundle.js',
         minChunks: ({ resource }) =>
         resource &&
-        resource.indexOf("node_modules") >= 0 &&
+        resource.indexOf('node_modules') >= 0 &&
         resource.match(/\.(js|less|scss)$/)
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
@@ -65,7 +65,7 @@ exports.prodPlugins = [
         debug: false,
         quiet: true,
         options: {
-            context: "/"
+            context: '/'
         },
     }),
     new ExtractTextPlugin({
@@ -109,6 +109,6 @@ exports.prodPlugins = [
         },
     }),
     new BundleAnalyzerPlugin({
-        analyzerMode: "static"
+        analyzerMode: 'static'
     }),
 ];

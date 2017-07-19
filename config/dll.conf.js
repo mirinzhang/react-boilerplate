@@ -7,7 +7,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    name: "vendor",
+    name: 'vendor',
     entry: Object.keys(pkg.dependencies),
     output: {
         path: path.join(__dirname, '../public/dll'),
@@ -18,8 +18,8 @@ module.exports = {
         new CleanWebpackPlugin([ 'public' ], { root: path.join(__dirname, '../') }),
         new webpack.DllPlugin({
             context: __dirname,
-            name: "[name]_[hash]",
-            path: path.join(__dirname, '../public/dll', "manifest.json"),
+            name: '[name]_[hash]',
+            path: path.join(__dirname, '../public/dll', 'manifest.json'),
         }),
     ]
 };

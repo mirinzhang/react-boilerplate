@@ -4,7 +4,7 @@ const rules = require('./webpack/rules');
 const appConfig = require('./app.conf');
 const resolver = require('./webpack/resolver');
 
-const __DEV__ = (process.env.NODE_ENV || "development") === "development";
+const __DEV__ = (process.env.NODE_ENV || 'development') === 'development';
 
 module.exports = {
     entry: __DEV__ ? appConfig.apps.entry.dev : appConfig.apps.entry.prod,
