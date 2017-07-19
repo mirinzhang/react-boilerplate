@@ -51,7 +51,7 @@ exports.devPlugins = [
 ];
 
 exports.prodPlugins = [
-    new CleanWebpackPlugin([ 'dist' ]),
+    new CleanWebpackPlugin([ 'dist', 'public' ], { root: path.join(__dirname, '../../') }),
     new webpack.optimize.CommonsChunkPlugin({
         names: [ 'vendor', 'manifest' ],
         filename: "vendor.bundle.js",
