@@ -1,4 +1,3 @@
-const path = require('path');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const appConfig = require('./app.conf');
@@ -9,8 +8,10 @@ module.exports = new WebpackDevServer(webpack(config), {
     inline: true,
     hot: true,
     historyApiFallback: true,
-    open: true,
-    openPage: '',
+    quiet: true,
+    noInfo: true,
+    stats: { colors: true },
+    disableHostCheck: true,
     proxy: appConfig.proxy,
 }).listen(appConfig.devServer.port, appConfig.devServer.host, (err) => {
     if(err) {
