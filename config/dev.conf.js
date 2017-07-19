@@ -4,7 +4,7 @@ const WebpackDevServer = require('webpack-dev-server');
 const appConfig = require('./app.conf');
 const config = require('./base.conf');
 
-new WebpackDevServer(webpack(config), {
+module.exports = new WebpackDevServer(webpack(config), {
     compress: true,
     inline: true,
     hot: true,
@@ -14,8 +14,8 @@ new WebpackDevServer(webpack(config), {
     proxy: appConfig.proxy,
 }).listen(appConfig.devServer.port, appConfig.devServer.host, (err) => {
     if(err) {
-        return console.log('[出错啦]', err);
+        return console.log('run start error', err);
     }
     
-    console.log(`在[${appConfig.devServer.port}] 浪起来啦~~~~`);
+    console.log(`Listen at http://${appConfig.devServer.host}:${appConfig.devServer.port}`);
 });

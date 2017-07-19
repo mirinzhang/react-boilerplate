@@ -15,13 +15,13 @@
             }
         },
         "start:dev": {
-            "command": "webpack-dashboard -- node --harmony ./config/dev.conf.js",
+            "command": "npx webpack-dashboard -- node --harmony ./config/dev.conf.js",
             "env": {
                 "NODE_ENV": "development"
             }
         },
         "build": {
-            "command": "./node_modules/.bin/webpack --config ./config/base.conf.js",
+            "command": "npx webpack --config ./config/base.conf.js",
             "env": {
                 "NODE_ENV": "production"
             }
