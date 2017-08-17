@@ -8,6 +8,7 @@ const path = require('path'),
     ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin'),
     HOST = '0.0.0.0',
     PORT = 4040,
+
     cssExtract = process.env.NODE_ENV === 'production' ?
         ExtractTextPlugin.extract({
             fallback: 'style', use: [ 'css', 'postcss', 'sass' ],
