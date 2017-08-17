@@ -45,7 +45,7 @@ exports.devPlugins = [
     new DashboardPlugin(),
     new WebpackNotifierPlugin({
         title: 'Compiled successfully!',
-        message: new Date(),
+        message: '🤡' + new Date(),
     }),
 ];
 
