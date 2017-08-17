@@ -38,20 +38,14 @@ exports.devPlugins = [
     new webpack.LoaderOptionsPlugin({
         debug: true,
         minimize: false,
-        options: {
-            tslint: {
-                configFile: path.join(__dirname, '../tools/tslint.json'),
-            },
-            context: '/',
-        },
     }),
     new webpack.DllReferencePlugin({
         manifest: path.join(__dirname, '../../public/dll', 'manifest.json'),
     }),
     new DashboardPlugin(),
     new WebpackNotifierPlugin({
-        title: 'Successfully',
-        message: 'build packages success'
+        title: 'Compiled successfully!',
+        message: new Date(),
     }),
 ];
 

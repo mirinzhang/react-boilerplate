@@ -15,7 +15,7 @@ module.exports = {
                 'webpack/hot/only-dev-server',
                 './src/index'
             ],
-            prod: [ ...Object.keys(pkg.dependencies), './src/index' ],
+            prod: [ ...Object.keys(pkg.dependencies).filter(val => !val.startsWith('@')), './src/index' ],
         },
         output: {
             path: path.join(__dirname, '../dist'),

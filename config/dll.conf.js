@@ -8,7 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     name: 'vendor',
-    entry: Object.keys(pkg.dependencies),
+    entry: Object.keys(pkg.dependencies).filter(val => !val.startsWith('@')),
     output: {
         path: path.join(__dirname, '../public/dll'),
         filename: '[name].js',
