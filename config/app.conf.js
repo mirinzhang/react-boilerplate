@@ -5,14 +5,13 @@ const path = require('path');
 const pkg = require('../package.json');
 
 const HOST = '0.0.0.0';
-const PORT = 4040;
+const _PORT = process.argv[ 2 ] || 4040;
 
 module.exports = {
     apps: {
         entry: {
             dev: [
-                `webpack-dev-server/client?http://${HOST}:${PORT}`,
-                'webpack/hot/only-dev-server',
+                `webpack-dev-server/client?http://${HOST}:${_PORT}`,
                 './src/index'
             ],
             prod: [ ...Object.keys(pkg.dependencies).filter(val => !val.startsWith('@')), './src/index' ],
@@ -30,7 +29,7 @@ module.exports = {
     },
     devServer: {
         host: HOST,
-        port: PORT,
+        port: _PORT,
     },
     proxy: {},
 };

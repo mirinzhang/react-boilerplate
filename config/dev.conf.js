@@ -9,7 +9,6 @@ const config = require('./base.conf');
 module.exports = new WebpackDevServer(webpack(config), {
     compress: true,
     inline: true,
-    hot: true,
     historyApiFallback: true,
     quiet: true,
     noInfo: true,
@@ -17,7 +16,7 @@ module.exports = new WebpackDevServer(webpack(config), {
     disableHostCheck: true,
     proxy: appConfig.proxy,
 }).listen(appConfig.devServer.port, appConfig.devServer.host, (err) => {
-    if(err) {
+    if (err) {
         return console.log('run start error', err);
     }
     
