@@ -1,7 +1,7 @@
 /**
  * Created by Min on 2017/7/11.
  */
-import React from 'react';
+import React, { Component } from 'react';
 import {
     BrowserRouter as Router,
     Route,
@@ -9,12 +9,14 @@ import {
 } from 'react-router-dom';
 import routes from './router';
 
-export default function() {
-    return (
-        <Router>
-            <Switch>
-                {routes.map((route) => <Route {...route} />)}
-            </Switch>
-        </Router>
-    );
+export default class App extends Component<any, any> {
+    public render() {
+        return (
+            <Router>
+                <Switch>
+                    {routes.map((route) => <Route {...route} />)}
+                </Switch>
+            </Router>
+        );
+    }
 }
