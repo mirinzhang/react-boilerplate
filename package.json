@@ -28,9 +28,6 @@
             }
         }
     },
-    "tslintConfig": {
-        "extends": "./config/tools/tslint.json"
-    },
     "babel": {
         "extends": "./config/tools/.babelrc"
     },
