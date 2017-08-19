@@ -9,6 +9,7 @@ const config = require('./base.conf');
 module.exports = new WebpackDevServer(webpack(config), {
     compress: true,
     inline: true,
+    hot: true,
     historyApiFallback: true,
     quiet: true,
     noInfo: true,
