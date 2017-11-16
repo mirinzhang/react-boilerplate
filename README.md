@@ -6,28 +6,29 @@
 
 ### Usage
 
-> git clone https://github.com/MiRinZhang/react-boilerplate.git
+`git clone https://github.com/MiRinZhang/react-boilerplate.git`
 
-> cd react-boilerplate && yarn
+
+`cd react-boilerplate && yarn`
 
 or
 
-> cd react-boilerplate && npm i
+`cd react-boilerplate && npm i`
 
 
 #### development
 
-> yarn start
+`yarn start`
 
 or
 
-> npm run start
+`npm run start`
 
 
 #### build
 
-> yarn build
+`yarn build`
 
 or
 
-> npm run build
+`npm run build`
