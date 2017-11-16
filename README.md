@@ -6,7 +6,7 @@
 
 ### Usage
 
-> `git clone https://github.com/MiRinZhang/react-boilerplate.git``
+> git clone https://github.com/MiRinZhang/react-boilerplate.git
 
 > cd react-boilerplate && yarn
 
