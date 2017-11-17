@@ -13,7 +13,6 @@ const routes = [
         }),
         exact: true,
         strict: true,
-        key: 0,
     },
     {
         path: '/first',
@@ -23,7 +22,6 @@ const routes = [
         }),
         exact: true,
         strict: true,
-        key: 1,
     },
     {
         path: '/second',
@@ -33,7 +31,6 @@ const routes = [
         }),
         exact: true,
         strict: true,
-        key: 2,
     },
     {
         path: '/demo',
@@ -43,7 +40,6 @@ const routes = [
         }),
         exact: true,
         strict: true,
-        key: 3,
     },
 ];
 

@@ -11,6 +11,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 const __DEV__ = (process.env.NODE_ENV || 'development') === 'development';
 
@@ -111,4 +112,5 @@ exports.prodPlugins = [
     new BundleAnalyzerPlugin({
         analyzerMode: 'static'
     }),
+    new ManifestPlugin(),
 ];

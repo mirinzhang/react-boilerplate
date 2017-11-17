@@ -14,7 +14,7 @@ export default class App extends Component <any, any> {
         return (
             <Router>
                 <Switch>
-                    {routes.map((route) => <Route {...route} />)}
+                    {routes.map((route, key) => <Route key={key} {...route} />)}
                 </Switch>
             </Router>
         );
