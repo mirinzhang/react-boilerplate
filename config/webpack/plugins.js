@@ -9,6 +9,7 @@ const WebpackChunkHash = require('webpack-chunk-hash');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 const __DEV__ = (process.env.NODE_ENV || 'development') === 'development';
 
@@ -110,4 +111,5 @@ exports.prodPlugins = [
     new BundleAnalyzerPlugin({
         analyzerMode: 'static'
     }),
+    new ManifestPlugin()
 ];
