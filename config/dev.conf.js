@@ -8,7 +8,7 @@ module.exports = new WebpackDevServer(webpack(config), {
     inline: true,
     hot: true,
     historyApiFallback: true,
-    // quiet: true,
+    quiet: true,
     noInfo: true,
     stats: { colors: true },
     disableHostCheck: true,
