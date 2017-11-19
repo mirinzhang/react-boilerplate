@@ -16,9 +16,9 @@ const routes = [
         key: 0,
     },
     {
-        path: '/first',
+        path: '/timer',
         component: Loadable({
-            loader: () => import(/* webpackChunkName: "first" */ '../components/First'),
+            loader: () => import(/* webpackChunkName: "timer" */ '../components/Timer'),
             loading: Loading,
         }),
         exact: true,

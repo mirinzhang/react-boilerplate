@@ -2,21 +2,29 @@
  * Created by Min on 2017/7/11.
  */
 import React, { Component } from 'react';
+import { Layout } from 'antd';
 import { Link } from 'react-router-dom';
 import styles from './style';
+
+const { Header, Content, Footer } = Layout;
 
 export default class Home extends Component {
     render() {
         return (
-            <div className={styles.container}>
-                <h3>Home Page</h3>
-                <h4>Example:</h4>
-                <ul>
-                    <li><Link to="/first">Go First page</Link></li>
-                    <li><Link to="/second">Go Second page</Link></li>
-                    <li><Link to="/third">Go Third page</Link></li>
-                </ul>
-            </div>
+            <Layout>
+                <Header>
+                    <div className={styles.homeTitle}>React-Mobx-Boilerplate</div>
+                </Header>
+                <Content>
+                    <div className={styles.homeContent}>
+                        <Link to="/timer">Todo</Link>
+                        <Link to="/second">Second--3</Link>
+                    </div>
+                </Content>
+                <Footer>
+                    <div className={styles.homeFooter}>By MiRinZhang</div>
+                </Footer>
+            </Layout>
         );
     }
 }

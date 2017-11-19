@@ -4,7 +4,7 @@
 const path = require('path');
 const pkg = require('../package.json');
 const HOST = '0.0.0.0';
-const PORT = 4040;
+const PORT = process.argv[2] || 4040;
 
 module.exports = {
     apps: {
