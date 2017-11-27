@@ -1,4 +1,4 @@
-> boilerplate (`react` `redux` `antd`)
+> boilerplate (`react` `mobx` `antd`)
 
 
 *`npm` version >= `5.2.0`*
@@ -7,7 +7,6 @@
 ### Usage
 
 `git clone https://github.com/MiRinZhang/react-boilerplate.git`
-
 
 `cd react-boilerplate && yarn`
 

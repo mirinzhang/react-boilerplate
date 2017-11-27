@@ -8,7 +8,7 @@ const routes = [
     {
         path: '/',
         component: Loadable({
-            loader: () => import(/* webpackChunkName: "home" */ '../components/Home'),
+            loader: () => import(/* webpackChunkName: "home" */ '../pages/Home'),
             loading: Loading,
         }),
         exact: true,
