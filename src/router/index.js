@@ -18,7 +18,7 @@ const routes = [
     {
         path: '/timer',
         component: Loadable({
-            loader: () => import(/* webpackChunkName: "timer" */ '../components/Timer'),
+            loader: () => import(/* webpackChunkName: "timer" */ '../pages/Timer'),
             loading: Loading,
         }),
         exact: true,
@@ -28,7 +28,7 @@ const routes = [
     {
         path: '/second',
         component: Loadable({
-            loader: () => import(/* webpackChunkName: "second" */ '../components/Second'),
+            loader: () => import(/* webpackChunkName: "second" */ '../pages/Second'),
             loading: Loading,
         }),
         exact: true,
@@ -38,7 +38,7 @@ const routes = [
     {
         path: '/third',
         component: Loadable({
-            loader: () => import(/* webpackChunkName: "third" */ '../components/Third'),
+            loader: () => import(/* webpackChunkName: "third" */ '../pages/Third'),
             loading: Loading,
         }),
         exact: true,

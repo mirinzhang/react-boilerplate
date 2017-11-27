@@ -72,9 +72,10 @@ const toContentType = (response) => {
  * @param {object} [options]
  * @return {Promise}
  */
-export default request = (url, options) =>
+const request = (url, options) =>
     window.fetch(url, options)
         .then(checkResponse)
         .then(toContentType)
         .catch(handledResponseError);
 
+export default request;

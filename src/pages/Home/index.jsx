@@ -18,7 +18,7 @@ export default class Home extends Component {
                 <Content>
                     <div className={styles.homeContent}>
                         <Link to="/timer">Todo</Link>
-                        <Link to="/second">Second--2</Link>
+                        <Link to="/second">Second</Link>
                     </div>
                 </Content>
                 <Footer>
