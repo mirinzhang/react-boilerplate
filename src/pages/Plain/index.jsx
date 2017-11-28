@@ -3,11 +3,11 @@
  */
 import React, { Component } from 'react';
 
-export default class Third extends Component {
+export default class Second extends Component {
     render() {
         return (
             <div>
-                <p>third page</p>
+                <p>nothing</p>
             </div>
         );
     }

@@ -3,7 +3,6 @@
  */
 import React, { Component } from 'react';
 import { Layout } from 'antd';
-// import PropTypes from 'proptypes';
 import { observer } from 'mobx-react';
 import { Route, Switch } from 'react-router-dom';
 import SideBar from '../../components/Sidebar';

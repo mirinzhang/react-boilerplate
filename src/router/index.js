@@ -16,24 +16,14 @@ const routes = [
         key: 1,
     },
     {
-        path: '/timer',
+        path: '/plain',
         component: Loadable({
-            loader: () => import(/* webpackChunkName: "timer" */ '../pages/Timer'),
+            loader: () => import(/* webpackChunkName: "second" */ '../pages/Plain'),
             loading: Loading,
         }),
         exact: true,
         strict: true,
         key: 2,
-    },
-    {
-        path: '/plain',
-        component: Loadable({
-            loader: () => import(/* webpackChunkName: "second" */ '../pages/Second'),
-            loading: Loading,
-        }),
-        exact: true,
-        strict: true,
-        key: 3,
     },
 ];
 

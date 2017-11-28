@@ -8,11 +8,6 @@ export const sideBar = [
         icon: 'bars',
     },
     {
-        text: 'Timer',
-        path: '/timer',
-        icon: 'minus-square-o',
-    },
-    {
         text: 'plain',
         path: '/plain',
         icon: 'minus-square-o',
