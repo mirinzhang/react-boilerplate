@@ -12,14 +12,16 @@ const { Sider } = Layout;
 export default class Home extends Component {
     static propTypes = {
         collapsed: PropTypes.bool,
+        items: PropTypes.array.isRequired,
     };
     
     static defaultProps = {
         collapsed: false,
+        items: [],
     };
     
     render() {
-        const { collapsed } = this.props;
+        const { collapsed, items } = this.props;
         return (
             <Sider
                 trigger={null}
@@ -32,20 +34,18 @@ export default class Home extends Component {
                 <Menu
                     theme="dark"
                     mode="inline"
-                    defaultSelectedKeys={['1']}
+                    defaultSelectedKeys={['0']}
                 >
-                    <Menu.Item key="1">
-                        <Icon type="bars" />
-                        <span><Link to="/todo" className="link">TODO</Link></span>
-                    </Menu.Item>
-                    <Menu.Item key="2">
-                        <Icon type="minus-square-o" />
-                        <span><Link to="/timer" className="link">Timer</Link></span>
-                    </Menu.Item>
-                    <Menu.Item key="3">
-                        <Icon type="minus-square-o" />
-                        <span>Page2</span>
-                    </Menu.Item>
+                    {
+                        items.map((item, key) => (
+                            <Menu.Item key={key}>
+                                <Icon type={item.icon} />
+                                <Link to={item.path}>
+                                    {item.text}
+                                </Link>
+                            </Menu.Item>),
+                        )
+                    }
                 </Menu>
             </Sider>
         );

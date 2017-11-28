@@ -10,6 +10,7 @@ import SideBar from '../../components/Sidebar';
 import CustomHeader from '../../components/CustomHeader';
 import routes from '../../router';
 import { store } from './mobx';
+import { sideBar } from '../../common/sidebar';
 import './style';
 
 const { Content } = Layout;
@@ -19,7 +20,9 @@ export default class Home extends Component {
     render() {
         return (
             <Layout className="home-container">
-                <SideBar collapsed={store.collapsed} />
+                <SideBar
+                    items={sideBar}
+                    collapsed={store.collapsed} />
                 <Layout>
                     <CustomHeader
                         toggle={store.toggle}

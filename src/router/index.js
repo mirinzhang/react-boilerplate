@@ -8,16 +8,6 @@ const routes = [
     {
         path: '/',
         component: Loadable({
-            loader: () => import(/* webpackChunkName: "home" */ '../pages/Home'),
-            loading: Loading,
-        }),
-        exact: true,
-        strict: true,
-        key: 0,
-    },
-    {
-        path: '/todo',
-        component: Loadable({
             loader: () => import(/* webpackChunkName: "todo" */ '../pages/Todo'),
             loading: Loading,
         }),
@@ -36,7 +26,7 @@ const routes = [
         key: 2,
     },
     {
-        path: '/second',
+        path: '/plain',
         component: Loadable({
             loader: () => import(/* webpackChunkName: "second" */ '../pages/Second'),
             loading: Loading,
