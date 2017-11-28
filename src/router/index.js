@@ -11,17 +11,19 @@ const routes = [
             loader: () => import(/* webpackChunkName: "home" */ '../pages/Home'),
             loading: Loading,
         }),
-        routes: [
-            {
-                path: '/todo',
-                component: Loadable({
-                    loader: () => import(/* webpackChunkName: "todo" */ '../pages/Todo'),
-                    loading: Loading,
-                }),
-            },
-        ],
+        exact: true,
         strict: true,
         key: 0,
+    },
+    {
+        path: '/todo',
+        component: Loadable({
+            loader: () => import(/* webpackChunkName: "todo" */ '../pages/Todo'),
+            loading: Loading,
+        }),
+        exact: true,
+        strict: true,
+        key: 1,
     },
     {
         path: '/timer',
@@ -31,22 +33,12 @@ const routes = [
         }),
         exact: true,
         strict: true,
-        key: 1,
+        key: 2,
     },
     {
         path: '/second',
         component: Loadable({
             loader: () => import(/* webpackChunkName: "second" */ '../pages/Second'),
-            loading: Loading,
-        }),
-        exact: true,
-        strict: true,
-        key: 2,
-    },
-    {
-        path: '/third',
-        component: Loadable({
-            loader: () => import(/* webpackChunkName: "third" */ '../pages/Third'),
             loading: Loading,
         }),
         exact: true,
