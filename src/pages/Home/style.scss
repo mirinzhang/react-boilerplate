@@ -1,13 +1,37 @@
-.homeTitle {
-    color: #FFFFFF;
-}
+.home-container {
+    height: 100vh;
 
-.homeContent {
-    height: 50vh;
-    text-align: center;
-    margin-top: 30px;
-}
+    .logo {
+        height: 32px;
+        background: #333;
+        border-radius: 6px;
+        margin: 16px;
+    }
 
-.homeFooter {
-    text-align: center;
+    .home-header {
+        background: #ffffff;
+        padding: 0;
+
+        .trigger {
+            font-size: 18px;
+            line-height: 64px;
+            padding: 0 16px;
+            cursor: pointer;
+            transition: color .3s;
+        }
+
+        .trigger:hover {
+            color: #108ee9;
+        }
+    }
+
+    .home-content {
+        margin: 24px 16px;
+        padding: 24px;
+        background: #fff;
+    }
+
+    .link {
+        color: #ffffff;
+    }
 }

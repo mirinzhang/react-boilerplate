@@ -3,14 +3,14 @@
  */
 import React, { Component } from 'react';
 import { Spin, Row, Col } from 'antd';
-import styles from './style';
+import './style';
 
 export default class Loading extends Component {
     render() {
         return (
-            <Row className={styles.container}>
+            <Row className="loading-container">
                 <Col span={12} />
-                <Spin tip="加载中…" size="large" />
+                <Spin tip="Loading…" size="large" />
             </Row>
         );
     }

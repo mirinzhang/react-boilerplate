@@ -9,7 +9,7 @@ const __DEV__ = (process.env.NODE_ENV || 'development') === 'development';
 const moduleCSSLoader = {
     loader: 'css',
     options: {
-        modules: true,
+        // modules: true,
         importLoaders: 1,
         localIdentName: '[name]__[local]--[hash:base64:5]'
     }
