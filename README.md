@@ -1,5 +1,6 @@
 > boilerplate (`react` `redux` `antd`)
 
+[![BCH compliance](https://bettercodehub.com/edge/badge/MiRinZhang/react-boilerplate?branch=master)](https://bettercodehub.com/)
 
 *`npm` version >= `5.2.0`*
 
