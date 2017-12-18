@@ -1,7 +1,7 @@
-const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
-const appConfig = require('./app.conf');
-const config = require('./base.conf');
+const webpack = require('webpack'),
+    WebpackDevServer = require('webpack-dev-server'),
+    appConfig = require('./app.conf'),
+    config = require('./base.conf');
 
 module.exports = new WebpackDevServer(webpack(config), {
     compress: true,
@@ -13,10 +13,14 @@ module.exports = new WebpackDevServer(webpack(config), {
     stats: { colors: true },
     disableHostCheck: true,
     proxy: appConfig.proxy,
-}).listen(appConfig.devServer.port, appConfig.devServer.host, (err) => {
-    if(err) {
+}).listen(appConfig.devServer.port, appConfig.devServer.host, err => {
+    if (err) {
         return console.log('run start error', err);
     }
-    
-    console.log(`Listen at http://${appConfig.devServer.host}:${appConfig.devServer.port}`);
+
+    console.log(
+        `Listen at http://${appConfig.devServer.host}:${
+            appConfig.devServer.port
+        }`,
+    );
 });

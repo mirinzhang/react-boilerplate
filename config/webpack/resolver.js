@@ -3,9 +3,9 @@
  */
 module.exports = {
     resolve: {
-        extensions: [ '.jsx', '.js', '.sass', '.scss' ],
+        extensions: ['.jsx', '.js', '.sass', '.scss'],
     },
     resolveLoader: {
-        moduleExtensions: [ '-loader' ],
+        moduleExtensions: ['-loader'],
     },
 };
