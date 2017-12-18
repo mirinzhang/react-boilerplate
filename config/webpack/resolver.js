@@ -3,10 +3,10 @@
  */
 module.exports = {
     resolve: {
-        extensions: [ '.tsx', '.ts', '.jsx', '.js', '.sass', '.scss' ],
-        modules: [ 'src', 'node_modules' ],
+        extensions: ['.tsx', '.ts', '.jsx', '.js', '.sass', '.scss'],
+        modules: ['src', 'node_modules'],
     },
     resolveLoader: {
-        moduleExtensions: [ '-loader' ],
+        moduleExtensions: ['-loader'],
     },
 };

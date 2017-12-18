@@ -1,0 +1,127 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.3.2/libexec/bin/yarn.js
+
+PATH: 
+  /Users/Min/.rvm/gems/ruby-2.4.0/bin:/Users/Min/.rvm/gems/ruby-2.4.0@global/bin:/Users/Min/.rvm/rubies/ruby-2.4.0/bin:/usr/local/opt/sqlite/bin:/usr/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/go/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/Min/.rvm/gems/ruby-2.4.0/bin:/Users/Min/.rvm/gems/ruby-2.4.0@global/bin:/Users/Min/.rvm/rubies/ruby-2.4.0/bin:/usr/local/opt/sqlite/bin:/usr/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/Min/.rvm/bin:/usr/local/go/bin:/Users/Min/.rvm/bin
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  9.2.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+      "name": "react-webpack-template",
+      "version": "1.0.0",
+      "description": "a react webpack project",
+      "main": "index.js",
+      "scripts": {
+          "start": "npx better-npm-run start:dll && npx better-npm-run start:dev",
+          "build": "npx better-npm-run build",
+          "lint": "tslint -p tslint.json"
+      },
+      "betterScripts": {
+          "start:dll": {
+              "command": "npx webpack --config ./config/dll.conf.js",
+              "env": {
+                  "NODE_ENV": "development"
+              }
+          },
+          "start:dev": {
+              "command": "npx webpack-dashboard -- node --harmony ./config/dev.conf.js",
+              "env": {
+                  "NODE_ENV": "development"
+              }
+          },
+          "build": {
+              "command": "npx webpack --config ./config/base.conf.js",
+              "env": {
+                  "NODE_ENV": "production"
+              }
+          }
+      },
+      "babel": {
+          "extends": "./config/tools/.babelrc"
+      },
+      "repository": "git@github.com:MiRinZhang/react-boilerplate.git",
+      "author": "MiRinZhang <noodles@yabing.me>",
+      "license": "MIT",
+      "devDependencies": {
+          "babel-core": "^6.26.0",
+          "babel-loader": "^7.1.2",
+          "babel-plugin-import": "^1.6.2",
+          "babel-plugin-react-transform": "^2.0.2",
+          "babel-plugin-syntax-dynamic-import": "^6.18.0",
+          "babel-plugin-transform-async-to-generator": "^6.24.1",
+          "babel-plugin-transform-decorators-legacy": "^1.3.4",
+          "babel-plugin-transform-regenerator": "^6.26.0",
+          "babel-plugin-transform-runtime": "^6.23.0",
+          "babel-preset-env": "^1.6.1",
+          "babel-preset-react": "^6.24.1",
+          "babel-preset-react-hmre": "^1.1.1",
+          "babel-preset-react-optimize": "^1.0.1",
+          "babel-preset-stage-2": "^6.24.1",
+          "babel-runtime": "^6.26.0",
+          "better-npm-run": "^0.1.0",
+          "clean-webpack-plugin": "^0.1.17",
+          "cross-env": "^5.1.1",
+          "css-loader": "^0.28.7",
+          "extract-text-webpack-plugin": "^2.1.2",
+          "fork-ts-checker-webpack-plugin": "^0.2.8",
+          "html-webpack-plugin": "^2.30.1",
+          "node-sass": "^4.6.1",
+          "postcss-cssnext": "^2.11.0",
+          "postcss-loader": "^2.0.8",
+          "react-transform-catch-errors": "^1.0.2",
+          "react-transform-hmr": "^1.0.4",
+          "redbox-react": "^1.5.0",
+          "sass-loader": "^6.0.6",
+          "source-map-loader": "^0.2.3",
+          "style-loader": "^0.18.2",
+          "ts-loader": "^2.3.7",
+          "tslint": "^5.8.0",
+          "tslint-react": "^3.2.0",
+          "typescript": "^2.6.1",
+          "webpack": "^3.8.1",
+          "webpack-bundle-analyzer": "^2.9.1",
+          "webpack-chunk-hash": "^0.4.0",
+          "webpack-dashboard": "^0.4.0",
+          "webpack-dev-server": "^2.9.4",
+          "webpack-manifest-plugin": "^1.3.2",
+          "webpack-notifier": "^1.5.0"
+      },
+      "dependencies": {
+          "@types/node": "^8.5.1",
+          "@types/react": "^16.0.31",
+          "@types/react-dom": "^16.0.3",
+          "@types/react-loadable": "^4.0.4",
+          "@types/react-redux": "^4.4.47",
+          "@types/react-router": "^4.0.19",
+          "@types/react-router-dom": "^4.2.3",
+          "react": "^16.2.0",
+          "react-dom": "^16.2.0",
+          "react-loadable": "^4.0.5",
+          "react-redux": "^5.0.6",
+          "react-router": "^4.2.0",
+          "react-router-dom": "^4.2.2",
+          "redux": "^3.7.2",
+          "whatwg-fetch": "^2.0.3"
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: https://registry.yarnpkg.com/redux/-/redux-3.7.2.tgz: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/Cellar/yarn/1.3.2/libexec/lib/cli.js:123749:19)
+      at ontimeout (timers.js:478:11)
+      at tryOnTimeout (timers.js:302:5)
+      at Timer.listOnTimeout (timers.js:262:5)

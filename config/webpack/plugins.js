@@ -1,20 +1,18 @@
 /**
  * Created by Min on 2017/7/19.
  */
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const WebpackChunkHash = require('webpack-chunk-hash');
-const DashboardPlugin = require('webpack-dashboard/plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const WebpackNotifierPlugin = require('webpack-notifier');
-const ManifestPlugin = require('webpack-manifest-plugin');
-
-const __DEV__ = (process.env.NODE_ENV || 'development') === 'development';
-
+const path = require('path'),
+    webpack = require('webpack'),
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin'),
+    WebpackChunkHash = require('webpack-chunk-hash'),
+    DashboardPlugin = require('webpack-dashboard/plugin'),
+    { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer'),
+    CleanWebpackPlugin = require('clean-webpack-plugin'),
+    ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin'),
+    WebpackNotifierPlugin = require('webpack-notifier'),
+    ManifestPlugin = require('webpack-manifest-plugin'),
+    __DEV__ = (process.env.NODE_ENV || 'development') === 'development';
 
 exports.commonPlugins = [
     new webpack.DefinePlugin({
@@ -51,14 +49,16 @@ exports.devPlugins = [
 ];
 
 exports.prodPlugins = [
-    new CleanWebpackPlugin([ 'dist', 'public' ], { root: path.join(__dirname, '../../') }),
+    new CleanWebpackPlugin(['dist', 'public'], {
+        root: path.join(__dirname, '../../'),
+    }),
     new webpack.optimize.CommonsChunkPlugin({
-        names: [ 'vendor', 'manifest' ],
+        names: ['vendor', 'manifest'],
         filename: 'vendor.bundle.js',
         minChunks: ({ resource }) =>
-        resource &&
-        resource.indexOf('node_modules') >= 0 &&
-        resource.match(/\.(js|less|scss)$/)
+            resource &&
+            resource.indexOf('node_modules') >= 0 &&
+            resource.match(/\.(js|less|scss)$/),
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.LoaderOptionsPlugin({
@@ -66,7 +66,7 @@ exports.prodPlugins = [
         debug: false,
         quiet: true,
         options: {
-            context: '/'
+            context: '/',
         },
     }),
     new ExtractTextPlugin({
@@ -110,7 +110,7 @@ exports.prodPlugins = [
         },
     }),
     new BundleAnalyzerPlugin({
-        analyzerMode: 'static'
+        analyzerMode: 'static',
     }),
     new ManifestPlugin(),
 ];
