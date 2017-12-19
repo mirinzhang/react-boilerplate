@@ -2,5 +2,7 @@
 .idea
 *.iml
 dist
+public
 node_modules
 commit.sh
+yarn-error.log
