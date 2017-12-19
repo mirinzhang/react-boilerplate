@@ -12,10 +12,10 @@ module.exports = {
             dev: [
                 `webpack-dev-server/client?http://${HOST}:${PORT}`, 'webpack/hot/only-dev-server', './src/index'
             ],
-            prod: [
-                ...Object.keys(pkg.dependencies),
-                './src/index'
-            ]
+            prod: {
+                app: './src/index',
+                vendors: Object.keys(pkg.dependencies)
+            }
         },
         output: {
             path: path.join(__dirname, '../dist'),
