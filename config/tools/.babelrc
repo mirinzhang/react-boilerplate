@@ -1,18 +1,13 @@
 {
     "presets": [
         "react",
-        [
-            "env",
-            {
-                "modules": false
-            }
-        ],
+        "env",
         "stage-2"
     ],
     "plugins": [
+        "transform-runtime",
         "syntax-dynamic-import",
-        "transform-decorators-legacy",
-        [
+        "transform-decorators-legacy", [
             "import",
             {
                 "libraryName": "antd",
@@ -31,14 +26,11 @@
                 "react-hmre"
             ],
             "plugins": [
-                "transform-runtime",
                 "transform-async-to-generator",
-                "transform-regenerator",
-                [
+                "transform-regenerator", [
                     "react-transform",
                     {
-                        "transforms": [
-                            {
+                        "transforms": [{
                                 "transform": "react-transform-hmr",
                                 "imports": [
                                     "react"
