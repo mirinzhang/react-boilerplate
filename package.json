@@ -81,7 +81,7 @@
         "webpack-dev-server": "^2.9.4"
     },
     "dependencies": {
-        "antd": "^2.13.10",
+        "antd": "^3.0.2",
         "classnames": "^2.2.5",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
