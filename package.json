@@ -74,15 +74,18 @@
         "sass-loader": "^6.0.6",
         "source-map-loader": "^0.2.3",
         "style-loader": "^0.18.2",
+        "sw-precache-webpack-plugin": "^0.11.4",
         "webpack": "^3.8.1",
         "webpack-bundle-analyzer": "^2.9.1",
         "webpack-chunk-hash": "^0.4.0",
         "webpack-dashboard": "^0.4.0",
-        "webpack-dev-server": "^2.9.4"
+        "webpack-dev-server": "^2.9.4",
+        "webpack-pwa-manifest": "^3.4.1"
     },
     "dependencies": {
         "antd": "^3.0.2",
         "classnames": "^2.2.5",
+        "proptypes": "^1.1.0",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
         "react-loadable": "^4.0.5",

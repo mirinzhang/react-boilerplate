@@ -3,6 +3,14 @@
  */
 const path = require('path'),
     pkg = require('../package.json'),
+    commonOuput = {
+        path: path.join(__dirname, '../dist'),
+        filename: 'js/[name].js',
+        chunkFilename: 'js/[name].[chunkhash:6].chunk.js',
+        sourceMapFilename: 'js/[name].bundle.map',
+        publicPath: '/'
+    },
+    needRemovePkg = ['antd'],
     HOST = '0.0.0.0',
     PORT = 4040;
 
@@ -14,15 +22,14 @@ module.exports = {
             ],
             prod: {
                 app: './src/index',
-                vendors: Object.keys(pkg.dependencies)
+                vendors: Object
+                    .keys(pkg.dependencies)
+                    .filter(pkg => !needRemovePkg.includes(pkg))
             }
         },
         output: {
-            path: path.join(__dirname, '../dist'),
-            filename: '[name].js',
-            chunkFilename: '[name].[chunkhash:6].chunk.js',
-            sourceMapFilename: '[name].bundle.map',
-            publicPath: '/'
+            dev: commonOuput,
+            prod: commonOuput, // custom config production publicPath
         },
         devtool: {
             dev: 'eval-cheap-module-source-map',
