@@ -6,7 +6,7 @@ const path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     WebpackChunkHash = require('webpack-chunk-hash'),
-    DashboardPlugin = require('webpack-dashboard/plugin'), {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer'),
+    DashboardPlugin = require('webpack-dashboard/plugin'), { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer'),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
     WebpackPwaManifest = require('webpack-pwa-manifest'),
     SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin'),
@@ -14,48 +14,54 @@ const path = require('path'),
     __DEV__ = (process.env.NODE_ENV || 'development') === 'development';
 
 exports.commonPlugins = [new webpack.DefinePlugin({
-        'process.env': {
-            NODE_ENV: JSON.stringify(__DEV__
-                ? 'development'
-                : 'production')
-        }
-    })];
+    'process.env': {
+        NODE_ENV: JSON.stringify(__DEV__
+            ? 'development'
+            : 'production'),
+    },
+})];
 
 exports.devPlugins = [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new HtmlWebpackPlugin({title: 'Development', filename: 'index.html', template: 'index.html', inject: true, hash: true}),
+    new HtmlWebpackPlugin({
+        title: 'Development',
+        filename: 'index.html',
+        template: 'index.html',
+        inject: true,
+        hash: true,
+    }),
     new webpack.LoaderOptionsPlugin({
         debug: true,
         minimize: false,
         options: {
             eslint: {
-                configFile: path.join(__dirname, '../tools/.eslintrc')
+                configFile: path.join(__dirname, '../tools/.eslintrc'),
             },
-            context: '/'
-        }
+            context: '/',
+        },
     }),
     new webpack.DllReferencePlugin({
-        manifest: path.join(__dirname, '../../public/dll', 'manifest.json')
+        manifest: path.join(__dirname, '../../public/dll', 'manifest.json'),
     }),
-    new DashboardPlugin()
+    new DashboardPlugin(),
 ];
 
 exports.prodPlugins = [
     new CleanWebpackPlugin([
-        'dist', 'public'
+        'dist', 'public',
     ], {
-        root: path.join(__dirname, '../../')
+        root: path.join(__dirname, '../../'),
     }),
     new webpack
         .optimize
         .CommonsChunkPlugin({
             names: [
-                'vendor', 'manifest'
+                'vendor', 'manifest',
             ],
             filename: 'js/vendor.bundle.js',
-            minChunks: ({resource}) => resource && resource.indexOf('node_modules') >= 0 && resource.match(/\.(js|less|scss)$/)
+            minChunks: ({ resource }) => resource && resource.indexOf('node_modules') >= 0 && resource.match(/\.(js|less|scss)$/),
         }),
     new webpack
         .optimize
@@ -65,10 +71,10 @@ exports.prodPlugins = [
         debug: false,
         quiet: true,
         options: {
-            context: '/'
-        }
+            context: '/',
+        },
     }),
-    new ExtractTextPlugin({filename: 'css/[name].style.[contenthash].css', disable: false, allChunks: true}),
+    new ExtractTextPlugin({ filename: 'css/[name].style.[contenthash].css', disable: false, allChunks: true }),
     new webpack
         .optimize
         .UglifyJsPlugin({
@@ -85,8 +91,8 @@ exports.prodPlugins = [
                 sequences: true,
                 evaluate: true,
                 join_vars: true,
-                if_return: true
-            }
+                if_return: true,
+            },
         }),
     new webpack
         .optimize
@@ -105,8 +111,8 @@ exports.prodPlugins = [
             removeAttributeQuotes: true,
             minifyJS: true,
             minifyCSS: true,
-            minifyURLs: true
-        }
+            minifyURLs: true,
+        },
     }),
     new WebpackPwaManifest({
         name: 'react-boilerplate',
@@ -125,11 +131,11 @@ exports.prodPlugins = [
                     192,
                     256,
                     384,
-                    512
+                    512,
                 ],
-                destination: 'icons'
-            }
-        ]
+                destination: 'icons',
+            },
+        ],
     }),
     new SWPrecacheWebpackPlugin({
         cacheId: 'react-boilerplate',
@@ -137,7 +143,9 @@ exports.prodPlugins = [
         filename: 'sw/service-worker.js',
         minify: true,
         navigateFallback: `${Configs.apps.output.prod.publicPath}index.html`,
-        staticFileGlobsIgnorePatterns: [/\.map$/, /manifest\.json$/, /report\.html/]
+        staticFileGlobs: [path.resolve(__dirname, 'index.html')],
+        staticFileGlobsIgnorePatterns: [/\.map$/, /manifest\.json$/, /report\.html/],
+        mergeStaticsConfig: true,
     }),
-    new BundleAnalyzerPlugin({analyzerMode: 'static'})
+    new BundleAnalyzerPlugin({ analyzerMode: 'static' }),
 ];
