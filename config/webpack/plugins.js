@@ -54,6 +54,10 @@ exports.prodPlugins = [
     ], {
         root: path.join(__dirname, '../../'),
     }),
+    new webpack.optimize.CommonsChunkPlugin({
+        name: 'common',
+        minChunks: 2,
+    }),
     new webpack
         .optimize
         .CommonsChunkPlugin({
@@ -63,6 +67,10 @@ exports.prodPlugins = [
             filename: 'js/vendor.bundle.js',
             minChunks: ({ resource }) => resource && resource.indexOf('node_modules') >= 0 && resource.match(/\.(js|less|scss)$/),
         }),
+    new webpack.optimize.CommonsChunkPlugin({
+        name: 'runtime',
+        minChunks: Infinity,
+    }),
     new webpack
         .optimize
         .ModuleConcatenationPlugin(),

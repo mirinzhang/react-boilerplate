@@ -41,4 +41,16 @@ module.exports = [
         test: /\.css$/,
         use: ['style', 'css'],
     },
+    {
+        test: /\.(png|jpg|gif|JPG|GIF|PNG|BMP|bmp|JPEG|jpeg)$/,
+        exclude: /node_modules/,
+        use: [
+            {
+                loader: 'url',
+                options: {
+                    limit: 8192,
+                },
+            },
+        ],
+    },
 ];
