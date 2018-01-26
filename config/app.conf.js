@@ -14,14 +14,14 @@ module.exports = {
             ],
             prod: {
                 app: './src/index',
-                vendors: Object.keys(pkg.dependencies)
+                vendors: Object.keys(pkg.dependencies).filter(val => !val.startsWith('@'))
             }
         },
         output: {
             path: path.join(__dirname, '../dist'),
-            filename: '[name].js',
-            chunkFilename: '[name].[chunkhash:6].chunk.js',
-            sourceMapFilename: '[name].bundle.map',
+            filename: 'js/[name].js',
+            chunkFilename: 'js/[name].[chunkhash:6].chunk.js',
+            sourceMapFilename: 'js/[name].bundle.map',
             publicPath: '/'
         },
         devtool: {

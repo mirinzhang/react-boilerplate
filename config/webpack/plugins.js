@@ -53,12 +53,20 @@ exports.prodPlugins = [
         root: path.join(__dirname, '../../'),
     }),
     new webpack.optimize.CommonsChunkPlugin({
+        name: 'common',
+        minChunks: 2,
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
         names: ['vendor', 'manifest'],
-        filename: 'vendor.bundle.js',
+        filename: 'js/vendor.bundle.js',
         minChunks: ({ resource }) =>
             resource &&
             resource.indexOf('node_modules') >= 0 &&
             resource.match(/\.(js|less|scss)$/),
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+        name: 'runtime',
+        minChunks: Infinity,
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.LoaderOptionsPlugin({
@@ -70,7 +78,7 @@ exports.prodPlugins = [
         },
     }),
     new ExtractTextPlugin({
-        filename: '[name].style.[contenthash].css',
+        filename: 'css/[name].style.[contenthash].css',
         disable: false,
         allChunks: true,
     }),
